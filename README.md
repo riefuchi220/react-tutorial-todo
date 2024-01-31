@@ -68,3 +68,34 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+memo
+Hooks の理解
+
+- useState
+  const [todos, setTodos] = useState([]);
+  todos の中身を追加、削除など更新したい場合に setTodos を使って todos を更新できる
+
+変数を監視して、更新された場合のみ再レンダリングできるので、無駄なレンダリングを減らすことができる
+初期値を表示することができる
+
+- useRef
+  要素の取得ができる
+
+- スプレット構文
+  ...prevTodos
+
+オブジェクトにおけるスプレット構文の追加の方法
+setTodos((prevTodos) => {
+return [...prevTodos, { id: uuidv4(), name: name, completed: false }];
+});
+
+- uuid
+  https://www.npmjs.com/package/uuid
+
+直接値を変えるのは良くないため、一旦コピーして変数に入れ直して更新する
+
+関数
+map 1 つ 1 つ渡していく
+find 　条件式が true であれば、それだけを変数の中に入れていく
+filter 　条件式が false であれば、それだけを変数の中に入れていく
